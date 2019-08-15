@@ -1,0 +1,117 @@
+﻿@using FilmLove.Database.Entity
+@model CarouselPhoto
+@{
+    /**/
+
+    ViewBag.Title = "CarouselPhotoEdit";
+}
+
+
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("基本设置", "动态设置", "动态编辑", true))
+<div class="row bgwhitebox10 mymgb15">
+    <div class="mysearchbox">
+        <label>文章编辑</label>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mt30 mtop15">
+        @Html.HiddenFor(m => m.Id)
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>标题：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Title, new { @style = "width:300px;" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>图片地址：</label>
+                <div class="col-md-7">
+                    <form action="" name="formurl" method="post" enctype="multipart/form-data">
+                        <div style="position:relative;width:300px;height:300px">
+                            <label style="background:url(/Content/images/icon/up.png) no-repeat  center;background-size:50%;display:none;position:absolute;top:50%;left:50%;height:100px;width:100px;transform:translate3d(-50px,-50px,0)" id="imgspan"></label>
+                            <input type="file" id="ImgUrl" name="ImgUrl" value="" style="display:none;position:absolute;top:150px;left:50px;">
+                            <input type="hidden" value="@Model.ImgUrl" id="ImgUrl_hidden" />
+                            <img id="showImg" style="width: 300px;height: 300px;opacity:0.5;" src="@Model.ImgUrl">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>详细内容：</label>
+                <div class="col-md-7">
+                    @Html.TextAreaFor(m => m.Content)
+                </div>
+            </div>
+        </div>
+
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>轮播图描述：</label>
+                <div class="col-md-7">
+                    @Html.TextAreaFor(m => m.Description, new { @rows = "3", @class = "txtInput middle2 form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>英文备注：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Remark, new { @style = "width:500px;" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>作者：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Author, new { @style = "width:200px;" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>动态标题：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Headline, new { @style = "width:500px;" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>日期：</label>
+                <div class="col-md-2">
+                    <!--日期控件-->
+                    <span class="input-group date form_date" data-date="@Model.Time" data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd" data-link-field="Time">
+                        <input class="form-control" id="Time" type="text" value="@Model.Time">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin:20px 0px;">
+            <div class="col-md-2">
+                <div style="padding-left: 115px;">
+                    <a class="btn btn-primary" id="btnSubmit"><i class="fa fa-save" style="margin-right:5px;"></i>提交保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section CSSExtend{
+    <link href="@Html.GetUrlContent("/Content/css/bootstrap-datetimepicker.css")" rel="stylesheet" />
+    <link href="@Html.GetUrlContent("/Scripts/plugins/umeditor/themes/default/css/umeditor.css")" rel="stylesheet" />
+}
+@section JSExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/umeditor/umeditor.config.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/umeditor/umeditor.min.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/umeditor/lang/zh-cn/zh-cn.js")"></script>
+
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/pages/CarouselPhoto/CarouselPhotoEdit.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/bootstrap/bootstrap-datetimepicker.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js")"></script>
+}
+

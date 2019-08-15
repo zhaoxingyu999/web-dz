@@ -1,0 +1,97 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "AccountEdit";
+}
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("系统管理", "管理员列表", true))
+<div class="row bgwhitebox10 mymgb15">
+    <div class="mysearchbox">
+        <label>帐号编辑</label>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mt30 mtop15">
+        <input type="hidden" id="ManagerId" name="ManagerId" value="0" />
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label"><span class="spanrequired">*</span>登录帐号：</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="ManagerName" name="ManagerName" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label"><span class="spanrequired">*</span>姓名：</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="ManagerRealname" name="ManagerRealname" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label"><span class="spanrequired">*</span>联系电话：</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="ManagerTel" name="ManagerTel" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label"><span class="spanrequired">*</span>邮箱：</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="ManagerEmail" name="ManagerEmail" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label"><span class="spanrequired">*</span>人员状态：</label>
+                <div class="col-md-5 radio-pad">
+                    <label><input type="radio" value="1" name="ManagerStatus" class="ManagerStatus" /> 启用</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" value="0" name="ManagerStatus" class="ManagerStatus" /> 禁用</label>
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label"><span class="spanrequired">*</span>是否超管：</label>
+                <div class="col-md-5 radio-pad">
+                    <label><input type="radio" value="1" name="IsSupper" class="IsSupper" /> 是</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" value="0" name="IsSupper" class="IsSupper" /> 否</label>
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label">所属角色：</label>
+                <div class="col-md-7 radio-pad">
+                    <div class="role-menu-sub" id="div_roles"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label">默认密码：</label>
+                <div class="col-sm-5">
+                    <input class="form-control" name="manager_password" placeholder="123456" disabled="" type="password" />
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin:20px 0px;">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label"></label>
+                <div class="col-sm-8">
+                    @Html.Partial("_clickBtn",new FilmLove.Admin.CommEntity.ResEntities.ClickButtonModel("btn_save", "/WebSystem/AccountSaveInfo", "fa fa-save"))
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="btn_cancel" class="btn btn-warning">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section JsExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/WebManager/system/accountedit.js")"></script>
+}

@@ -1,0 +1,16 @@
+﻿@using FilmLove.Admin.CommEntity.ResEntities
+@model ClickButtonModel
+@{
+    ViewBag.Title = "_addBtn";
+    string strURL = Model.BtnDoUrl;
+    var curMenuPages = WebManagers.Core.SysLoginInfo.CurMenuPages();
+    if (curMenuPages == null)
+    {
+        curMenuPages = new List<WebManagers.Core.Entity.SysMenuPage>();
+    }
+    var curMenuPage = curMenuPages.FirstOrDefault(m => m.PageUrl != null && m.PageUrl.ToLower() == strURL.ToLower());
+}
+@if (curMenuPage != null)
+{
+    <button id="@Model.BtnId" class="btn btn-primary" data-url="@strURL">@Html.Raw(!string.IsNullOrEmpty(Model.BtnClassName) ? ("<i class='" + Model.BtnClassName + "'></i>") : "") @curMenuPage.PageViewname</button>
+}

@@ -1,0 +1,87 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "MenuEdit";
+}
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("系统管理", "菜单管理", true))
+<div class="row bgwhitebox10 mymgb15">
+    <div class="mysearchbox">
+        <label>菜单编辑</label>
+        <div class="mycl"></div>
+    </div>
+    <input id="MenuId" name="MenuId" value="0" type="hidden">
+
+</div>
+<div class="rows">
+    <div class="row rowmb15">
+        <div class="col-md-12">
+            <label class="col-sm-3 edit-group-label">菜单标题：</label>
+            <div class="col-sm-5">
+                <input class="form-control" name="MenuName" id="MenuName" value="" type="text" />
+            </div>
+        </div>
+    </div>
+    <div class="row rowmb15">
+        <div class="col-md-12">
+            <label class="col-sm-3 edit-group-label">上级导航：</label>
+            <div class="col-sm-5">
+                <select id="MenuPid" name="MenuPid">
+                    <option value="0" selected="selected">顶级菜单</option>
+                </select>
+            </div>
+            <div class="mycl"></div>
+        </div>
+    </div>
+    <div class="row rowmb15">
+        <div class="col-md-12">
+            <label class="col-sm-3 edit-group-label">ICON图标：</label>
+            <div class="col-sm-5">
+                <input class="form-control" name="MenuIcon" id="MenuIcon" value="" type="text" />
+            </div>
+        </div>
+    </div>
+    <div class="row rowmb15">
+        <div class="col-md-12">
+            <label class="col-sm-3 edit-group-label">链接地址：</label>
+            <div class="col-sm-5">
+                <input class="form-control" name="MenuUrl" id="MenuUrl" value="" type="text" />
+            </div>
+        </div>
+    </div>
+    <div class="row rowmb15">
+        <div class="col-md-12">
+            <label class="col-sm-3 edit-group-label">排序数字：</label>
+            <div class="col-sm-5">
+                <input class="form-control" name="MenuSort" id="MenuSort" value="0" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="row rowmb15">
+        <div class="col-md-12">
+            <label class="col-sm-3 edit-group-label">菜单状态：</label>
+            <div class="col-sm-5" style="padding-top:6px;">
+                <label>
+                    <input type="radio" value="1" name="MenuStatus" class="MenuStatus" /> 启用
+                </label>
+                &nbsp;&nbsp;&nbsp;
+                <label>
+                    <input type="radio" value="0" name="MenuStatus" class="MenuStatus" /> 禁用
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row rowmb15">
+        <div class="col-md-12">
+            <label class="col-sm-3 edit-group-label"></label>
+            <div class="col-md-5">
+                @Html.Partial("_clickBtn", new FilmLove.Admin.CommEntity.ResEntities.ClickButtonModel("btn_save", "/WebSystem/MenuSave", "fa fa-save"))
+                <button id="btn_cancel" class="btn btn-warning">取消</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section JsExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/WebManager/system/menuedit.js")"></script>
+}
+

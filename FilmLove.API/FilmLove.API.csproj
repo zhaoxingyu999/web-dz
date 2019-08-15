@@ -1,0 +1,310 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30B7E0DF-870E-4FE1-8740-1EF31BD20573}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FilmLove.API</RootNamespace>
+    <AssemblyName>FilmLove.API</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jose-jwt.2.4.0\lib\net40\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="YJYSoft.YL.Common, Version=1.3.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YJYSoft.YL.Common.1.3.4.2\lib\net45\YJYSoft.YL.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Logs\Content\css\animate.css" />
+    <Content Include="Areas\Logs\Content\css\bootstrap.css" />
+    <Content Include="Areas\Logs\Content\css\font-awesome.css" />
+    <Content Include="Areas\Logs\Content\css\mystyle.css" />
+    <Content Include="Areas\Logs\Content\css\style.css" />
+    <Content Include="Areas\Logs\Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Logs\Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Logs\Scripts\jquery-2.2.0.js" />
+    <Content Include="Areas\Logs\Scripts\jquery.md5.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\bootstrap.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\js\npm.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\dialog.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\extend\layer.ext.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\laydate\laydate.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\laydate\need\laydate.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\laydate\skins\dahong\icon.png" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\laydate\skins\dahong\laydate.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\laydate\skins\default\icon.png" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\laydate\skins\default\laydate.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\laydate\skins\molv\icon.png" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\laydate\skins\molv\laydate.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\layer.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\layer.min.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\layim\layim.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\layim\layim.js" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\layim\loading.gif" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\icon-ext.png" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\icon.png" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\loading-0.gif" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\loading-1.gif" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\loading-2.gif" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\xubox_ico0.png" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\xubox_loading0.gif" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\xubox_loading1.gif" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\xubox_loading2.gif" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\xubox_loading3.gif" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\default\xubox_title0.png" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\layer.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\layer.ext.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\layer\skin\moon\style.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\sspager\ss_page.css" />
+    <Content Include="Areas\Logs\Scripts\plugins\sspager\ss_page.js" />
+    <Content Include="Areas\Logs\Scripts\public\helper.js" />
+    <Content Include="Areas\Logs\Scripts\public\jquery.cookie.js" />
+    <Content Include="Areas\Logs\Scripts\public\jquery.md5.js" />
+    <Content Include="Areas\Logs\Scripts\public\myfuns.js" />
+    <Content Include="Areas\Logs\Scripts\public\tools.js" />
+    <Content Include="Areas\Logs\Scripts\WebManager\logs\error\Errorlist.js" />
+    <Content Include="Areas\Logs\Scripts\WebManager\logs\oper\Operlist.js" />
+    <Content Include="Global.asax" />
+    <Content Include="version.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiValidate.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Logs\Controllers\ErrorLogsController.cs" />
+    <Compile Include="Areas\Logs\Controllers\OperLogsController.cs" />
+    <Compile Include="Areas\Logs\LogsAreaRegistration.cs" />
+    <Compile Include="Areas\Logs\Models\ErrorLogsModel.cs" />
+    <Compile Include="Areas\Logs\Models\OperLogsModel.cs" />
+    <Compile Include="BaseControllers\BaseController.cs" />
+    <Compile Include="BaseControllers\JsonController.cs" />
+    <Compile Include="Controllers\AboutUSController.cs" />
+    <Compile Include="Controllers\CarouselPhotoController.cs" />
+    <Compile Include="Controllers\CopyrightController.cs" />
+    <Compile Include="Controllers\JobOffersController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InputSendSms.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sqlite\DB.SQLITE.TABLE\ErrorLogs.cs" />
+    <Compile Include="sqlite\DB.SQLITE.TABLE\OperLogs.cs" />
+    <Compile Include="sqlite\DB.SQLITE.TABLE\sqlite_master.cs" />
+    <Compile Include="sqlite\DB.SQLITE\SqlLiteAdoSession.cs" />
+    <Compile Include="sqlite\DB.SQLITE\SQLTableSentence.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Areas\Logs\Views\ErrorLogs\Index.cshtml" />
+    <Content Include="Areas\Logs\Views\OperLogs\Index.cshtml" />
+    <Content Include="Areas\Logs\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Logs\Views\web.config" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Logs\Scripts\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Logs\Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Logs\Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Logs\Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Logs\Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Logs\Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Logs\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Logs\Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Logs\Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="log4net.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\ApiMasterMSDeploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ApiMSDeploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ApiMSTestDeploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ReleaseFB.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Copyright\" />
+    <Folder Include="Views\Product\" />
+    <Folder Include="Views\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FilmLove.Business\FilmLove.Business.csproj">
+      <Project>{b513f615-a221-4a31-971c-34fe8e7ac234}</Project>
+      <Name>FilmLove.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FilmLove.Common\FilmLove.Common.csproj">
+      <Project>{8E424651-BF05-452A-B76E-50D61DA1AF38}</Project>
+      <Name>FilmLove.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FilmLove.Database\FilmLove.Database.csproj">
+      <Project>{460b56e6-26fc-462d-8d22-6d47d78894c4}</Project>
+      <Name>FilmLove.Database</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseFB|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;FB</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>43380</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5393/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.111.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

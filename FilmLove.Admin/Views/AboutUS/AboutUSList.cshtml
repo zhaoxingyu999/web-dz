@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "AboutUSList";
+}
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("基本设置", "关于我们_企业使命"))
+
+<link href="~/Scripts/plugins/sspager/ss_page.css" rel="stylesheet" />
+<div class="row bgwhitebox mymgb15">
+    <div class="bgwhitebox_title">内容</div>
+    <div class="bgwhitebox_content" style="padding-left:20px; padding-right:20px;">
+        <div class="col-sm-12" style="padding:0px;">
+            <table class="table table-bordered mytable">
+                <thead>
+                    <tr>
+                        <th width="5%">序号</th>
+                        <th width="25%">名称</th>
+                        <th width="5%">类别</th>
+                        <th width="60%">内容</th>
+                        <th width="5%">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="infodata"></tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div id="infoPage"></div>
+        </div>
+    </div>
+</div>
+
+@section JSExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/sspager/ss_page.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/public/tools.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/pages/AboutUs/AboutUsList.js")"></script>
+}
+
+
+
+

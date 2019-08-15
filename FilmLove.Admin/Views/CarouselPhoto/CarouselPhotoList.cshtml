@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "CarouselPhotoList";
+}
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("基本设置", "动态设置"))
+
+<link href="~/Scripts/plugins/sspager/ss_page.css" rel="stylesheet" />
+<link href="~/Scripts/plugins/layer/laydate/need/laydate.css" rel="stylesheet" />
+
+<div class="row bgwhitebox mymgb5" style="background:none; ">
+    <div class="bgwhitebox_content" style="padding-top:5px; padding-bottom:5px; ">
+        <div class="row searchrow">
+            <div class="myfl">
+                <label class="control-label myfl">标题：</label>
+                <div class="control-content myfl">
+                    <input id="TitleName" placeholder="标题" class="form-control mysearch-text" type="text">
+                </div>
+            </div>
+            <div class="control-content myfl">
+                <button id="SearchBtn" type="submit" class="btn btn-success btn-sm"><i class="fa fa-search"></i>查询</button>
+                <a class="btn btn-primary btn-sm" href="/CarouselPhoto/CarouselPhotoEdit"><i class="fa fa-add"></i>添加</a>
+            </div>
+            <div class="mycl"></div>
+        </div>
+    </div>
+</div>
+<div class="row bgwhitebox mymgb15">
+    <div class="bgwhitebox_title">文章列表</div>
+    <div class="bgwhitebox_content" style="padding-left:20px; padding-right:20px;">
+        <div class="col-sm-12" style="padding:0px;">
+            <table class="table table-bordered mytable">
+                <thead>
+                    <tr>
+                        <th width="5%">序号</th>
+                        <th width="5%">图片地址</th>
+                        <th width="7%">标题</th>
+                        <th width="7%">英文备注</th>
+                        <th width="8%">轮播图描述</th>
+                        <th width="4%">作者</th>
+                        <th width="10%">动态标题</th>
+                        <th width="3%">日期</th>
+                        <th width="5%">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="infodata"></tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div id="infoPage"></div>
+        </div>
+    </div>
+</div>
+
+@section JSExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/sspager/ss_page.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/public/tools.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/pages/CarouselPhoto/CarouselPhotoList.js")"></script>
+}
+
+
+
+

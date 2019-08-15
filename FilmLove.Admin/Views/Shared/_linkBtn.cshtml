@@ -1,0 +1,15 @@
+﻿@model string
+@{
+    ViewBag.Title = "_addBtn";
+    string strURL = Model;
+    var curMenuPages = WebManagers.Core.SysLoginInfo.CurMenuPages();
+    if (curMenuPages == null)
+    {
+        curMenuPages = new List<WebManagers.Core.Entity.SysMenuPage>();
+    }
+    var curMenuPage = curMenuPages.FirstOrDefault(m => m.PageUrl != null && m.PageUrl.ToLower() == strURL.ToLower());
+}
+@if (curMenuPage != null)
+{
+    <a class="btn btn-primary btn-sm" href="@strURL"><i class="fa fa-plus"></i> @curMenuPage.PageBtnname</a>
+}

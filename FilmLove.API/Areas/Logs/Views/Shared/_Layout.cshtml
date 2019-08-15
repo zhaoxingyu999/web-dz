@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="/Areas/Logs/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Areas/Logs/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="/Areas/Logs/Content/css/animate.css" rel="stylesheet" />
+    <link href="/Areas/Logs/Content/css/style.css" rel="stylesheet" />
+    <link href="/Areas/Logs/Content/css/mystyle.css" rel="stylesheet" />
+    @RenderSection("CSSExtend", required: false)
+</head>
+<body class="mybody gray-bg">
+    <div class="wrapper wrapper-content1">
+        @RenderBody()
+    </div>
+    <input id="pagehd" type="hidden" value="@string.Format("{0:yyyyMMddHHmmssfff}",DateTime.Now)" />
+</body>
+</html>
+<script type="text/javascript" src="/Areas/Logs/Scripts/jquery-2.2.0.js"></script>
+<script type="text/javascript" src="/Areas/Logs/Scripts/plugins/bootstrap/bootstrap.js"></script>
+<script type="text/javascript" src="/Areas/Logs/Scripts/public/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Areas/Logs/Scripts/public/jquery.md5.js"></script>
+<script type="text/javascript" src="/Areas/Logs/Scripts/plugins/layer/layer.min.js"></script>
+<script type="text/javascript" src="/Areas/Logs/Scripts/public/tools.js"></script>
+<script type="text/javascript" src="/Areas/Logs/Scripts/public/myfuns.js"></script>
+<script type="text/javascript" src="/Areas/Logs/Scripts/public/helper.js"></script>
+@RenderSection("JSExtend", required: false)

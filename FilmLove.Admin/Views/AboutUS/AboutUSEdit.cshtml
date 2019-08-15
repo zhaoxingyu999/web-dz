@@ -1,0 +1,56 @@
+﻿@using FilmLove.Database.Entity
+@model AboutUs
+@{
+    ViewBag.Title = "AboutUSEdit";
+}
+
+
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("基本设置", "关于我们_企业使命", "编辑", true))
+<div class="row bgwhitebox10 mymgb15">
+    <div class="mysearchbox">
+        <label>编辑</label>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mt30 mtop15">
+        @Html.HiddenFor(m => m.Id)
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>名称：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Name, new { @style = "width:200px;" })
+                  
+                </div>
+            </div>
+        </div>
+
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>类别：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Type, new { @disabled = "disabled" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>内容：</label>
+                <div class="col-md-7">
+                    @Html.TextAreaFor(m => m.Content, new { @rows = "8", @class = "txtInput middle2 form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin:20px 0px;">
+        <div class="col-md-2">
+            <div style="padding-left: 115px;">
+                <a class="btn btn-primary" id="btnSubmit"><i class="fa fa-save" style="margin-right:5px;"></i>提交保存</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section JSExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/pages/AboutUs/AboutUsEdit.js")"></script>
+}
+

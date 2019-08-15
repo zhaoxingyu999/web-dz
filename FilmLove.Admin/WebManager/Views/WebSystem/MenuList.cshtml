@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "MenuList";
+}
+@Html.Partial("_nav",new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("系统管理", "菜单管理"))
+<div class="row bgwhitebox10 mymgb15">
+    <div class="detail-search" style="border-bottom: 2px solid #01ACE2;padding-bottom:10px;">
+
+        <div class="col-sm-9 mypdl0">
+            @Html.Partial("_linkBtn", "/WebSystem/MenuEdit")
+            <button id="btn_makemenu" class="btn btn-primary" data-url="/WebSystem/MakeMenu2">更新新增加的功能菜单</button>
+        </div>
+        <div class="col-sm-3 mypdr0" style="text-align:right;">
+            
+        </div>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mtop15">
+        <div class="row">
+            <div class="col-sm-12" style="padding:0px;">
+                <table id="menutable" class="table table-bordered mytable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+@section JsExtend{
+<script type="text/javascript" src="@Html.GetUrlContent("/Scripts/WebManager/system/menulist.js")"></script>
+}

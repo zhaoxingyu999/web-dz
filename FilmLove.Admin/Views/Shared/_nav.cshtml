@@ -1,0 +1,19 @@
+﻿@model FilmLove.Admin.CommEntity.ResEntities.NavigationModel
+<div class="row" style="margin:10px 15px 0px 15px;padding:5px 0px;">
+    <ul class="breadcrumb myfl" style="width:75%;">
+        <li><i class="fa fa-home"></i> 首页</li>
+        <li>@Model.Title1</li>
+        <li>@Model.Title2</li>
+        @if (!string.IsNullOrEmpty(Model.Title3))
+        {
+        <li>@Model.Title3</li>
+        }
+    </ul>
+    @if(Model.IsBack)
+    { 
+    <div class="myfr">
+        <a class="btn btn-info btn-xs pull-right" href="javascript:void(0);" onclick="history.go(-1);"><i class="fa fa-backward"></i> 返回上一页</a>
+    </div>
+    }
+    <div class="mycl"></div>
+</div>

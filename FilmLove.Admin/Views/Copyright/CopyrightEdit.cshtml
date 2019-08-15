@@ -1,0 +1,56 @@
+﻿@using FilmLove.Database.Entity
+@model Copyright
+@{
+    ViewBag.Title = "CopyrightEdit";
+}
+
+
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("基本设置", "版权声明", "编辑", true))
+<div class="row bgwhitebox10 mymgb15">
+    <div class="mysearchbox">
+        <label>编辑</label>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mt30 mtop15">
+        @Html.HiddenFor(m => m.Id)
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>联系电话：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Tel, new { @style = "width:250px;" })                   
+                </div>
+            </div>
+        </div>
+
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>邮件：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Email, new { @style = "width:250px;" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>地址：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Address, new { @style = "width:250px;" })
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row" style="margin:20px 0px;">
+        <div class="col-md-2">
+            <div style="padding-left: 115px;">
+                <a class="btn btn-primary" id="btnSubmit"><i class="fa fa-save" style="margin-right:5px;"></i>提交保存</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+@section JSExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/pages/Copyright/CopyrightEdit.js")"></script>
+}
+

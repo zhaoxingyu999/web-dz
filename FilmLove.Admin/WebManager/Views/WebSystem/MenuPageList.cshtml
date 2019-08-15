@@ -1,0 +1,43 @@
+﻿@using FilmLove.Admin.WebManager.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "MenuPageList";
+    WebSysMenu CurMenu = ViewBag.CurMenu ?? new WebSysMenu();
+    WebSysMenu ParentMenu = ViewBag.ParentMenu ?? new WebSysMenu();
+}
+<div class="row bgwhitebox10 mymgb15">
+    <div class="detail-search" style="border-bottom: 2px solid #01ACE2;padding-bottom:10px;">
+        <div class="col-sm-9 mypdl0">
+            @ParentMenu.MenuName - @CurMenu.MenuName  子页面列表
+        </div>
+        <div class="col-sm-3 mypdr0">
+            <button id="btnAdd" class="btn btn-primary btn-sm myfr"><i class="fa fa-plus"></i> 添加子页面</button>
+        </div>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mtop15">
+        <div class="row">
+            <div class="col-sm-12" style="padding:0px;">
+                <table class="table table-bordered mytable">
+                    <thead>
+                        <tr>
+                            <th width="10%">页面名称</th>
+                            <th width="10%">页面类型</th>
+                            <th width="10%">显示名称-链接</th>
+                            <th width="10%">显示名称-按钮</th>
+                            <th width="20%">URL地址</th>
+                            <th width="10%">主页面</th>
+
+                            <th width="10%">页面状态</th>
+                            <th width="5%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data_body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section JSExtend{
+<script type="text/javascript" src="@Html.GetUrlContent("/Scripts/WebManager/system/menupagelist.js")"></script>    
+}

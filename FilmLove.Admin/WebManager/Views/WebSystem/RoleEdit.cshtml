@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "RoleEdit";
+}
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("系统管理", "角色管理", true))
+<div class="row bgwhitebox10 mymgb15">
+    <div class="mysearchbox">
+        <label>帐号编辑</label>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mt30 mtop15">
+        <input type="hidden" id="RoleId" name="RoleId" value="0" />
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label">@*<span class="spanrequired">*</span>*@角色名称：</label>
+                <div class="col-sm-5">
+                    <input class="form-control" id="RoleName" name="RoleName" value="" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label">角色状态：</label>
+                <div class="col-sm-5 radio-pad">
+                    <label><input type="radio" value="1" name="RoleStatus" class="RoleStatus" /> 启用</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" value="0" name="RoleStatus" class="RoleStatus" /> 禁用</label>
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label">角色描述：</label>
+                <div class="col-sm-5">
+                    <textarea class="form-control" name="RoleRemark" id="RoleRemark"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb15">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label">管理权限：</label>
+                <div class="col-md-9" id="div_menus">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin:20px 0px;">
+            <div class="col-md-12">
+                <label class="col-sm-3 edit-group-label"></label>
+                <div class="col-md-8">
+                    @Html.Partial("_clickBtn", new FilmLove.Admin.CommEntity.ResEntities.ClickButtonModel("btn_save", "/WebSystem/RoleSave", "fa fa-save"))
+                    <button id="btn_cancel" class="btn btn-warning">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section CssExtend{
+    <link rel="stylesheet" href="@Html.GetUrlContent("/Content/resource/style.css")" />
+}
+@section JsExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/WebManager/system/roleedit.js")"></script>
+}
+
+

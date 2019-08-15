@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "错误日志";
+    Layout = "~/Areas/Logs/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+
+    .autocut {
+        width: 300px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -icab-text-overflow: ellipsis;
+        -khtml-text-overflow: ellipsis;
+        -moz-text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis;
+    }  
+</style>
+<div class="row bgwhitebox10 mymgb15">
+    <div class="detail-search" style="border-bottom: 2px solid #01ACE2;padding-bottom:10px;">
+        <div class="col-sm-9 mypdl0">
+            关键字：
+            <input type="text" id="KeyWord" class="mysearch-text" style="width:350px;" placeholder="" />
+        </div>
+        <div class="col-sm-3 mypdr0" style="text-align:right;">
+            <button id="searchBtn" class="btn btn-success btn-sm"><i class="fa fa-search"></i>查询</button>
+        </div>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mtop15">
+        <div class="row">
+            <div class="col-sm-12" style="padding:0px;">
+                <table class="table table-bordered mytable">
+                    <thead>
+                        <tr>
+                            <th width="2%">ID</th>
+                            <th width="10%">ErrorType</th>
+                            <th width="10%">URL</th>
+                            <th width="10%">MoreTxt</th>
+                            <th width="10%">ErrorTxt</th>
+                            <th width="8%">CreateTime</th>
+                            <th width="3%">IP</th>
+                        </tr>
+                    </thead>
+                    <tbody id="accountbody"></tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div id="infoPage"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section CssExtend{
+    <link rel="stylesheet" href="@Html.GetUrlContent("/Scripts/plugins/sspager/ss_page.css")" />
+}
+@section JsExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/sspager/ss_page.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/WebManager/logs/error/errorlist.js")"></script>
+}

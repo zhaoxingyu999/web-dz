@@ -1,0 +1,80 @@
+﻿@using FilmLove.Database.Entity
+@model JobOffers
+@{
+    ViewBag.Title = "JobOffersEdit";
+}
+
+
+@Html.Partial("_nav", new FilmLove.Admin.CommEntity.ResEntities.NavigationModel("基本设置", "招聘设置", "招聘编辑", true))
+<div class="row bgwhitebox10 mymgb15">
+    <div class="mysearchbox">
+        <label>岗位编辑</label>
+        <div class="mycl"></div>
+    </div>
+    <div class="row mt30 mtop15">
+        @Html.HiddenFor(m => m.Id)
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>岗位名称：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Name, new { @style = "width:250px;" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>招聘数量：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Count, new { @style = "width:250px;" })
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>工作地点：</label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(m => m.Position, new { @style = "width:250px;" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>岗位职责：</label>
+                <div class="col-md-7">
+                    @Html.TextAreaFor(m => m.Task)
+                </div>
+            </div>
+        </div>
+        <div class="row rowmb5">
+            <div class="col-md-12">
+                <label class="col-sm-2 edit-group-label"><span class="spanrequired"></span>日期：</label>
+                <div class="col-md-2">
+                    <!--日期控件-->
+                    <span class="input-group date form_date" data-date="@Model.Time" data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd" data-link-field="Time">
+                        <input class="form-control" id="Time" type="text" value="@Model.Time">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin:20px 0px;">
+            <div class="col-md-2">
+                <div style="padding-left: 115px;">
+                    <a class="btn btn-primary" id="btnSubmit"><i class="fa fa-save" style="margin-right:5px;"></i>提交保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section CSSExtend{
+    <link href="@Html.GetUrlContent("/Content/css/bootstrap-datetimepicker.css")" rel="stylesheet" />
+}
+@section JSExtend{
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/ueditor/ueditor.config.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/ueditor/ueditor.all.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/pages/JobOffers/JobOffersEdit.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/bootstrap/bootstrap-datetimepicker.js")"></script>
+    <script type="text/javascript" src="@Html.GetUrlContent("/Scripts/plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js")"></script>
+}
+

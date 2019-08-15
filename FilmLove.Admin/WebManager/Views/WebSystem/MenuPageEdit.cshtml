@@ -1,0 +1,42 @@
+﻿@using FilmLove.Admin.WebManager.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "MenuPageEdit";
+    WebSysMenuPage MenuPage = ViewBag.MenuPage ?? new WebSysMenuPage();
+}
+<input type="hidden" id="PageId" name="PageId" value="@MenuPage.PageId" />
+<input type="hidden" id="MenuId" name="MenuId" value="@MenuPage.MenuId" />
+<div class="row col-sm-12" style="background:#fff; padding-top:10px; padding-bottom:10px;">
+    <table class="table table-bordered mytable">
+        <tr>
+            <th width="15%" style="background:#F5F5F6;">页面名称</th>
+            <td width="35%"><input id="PageName" name="PageName" class="form-control objsort" value="@MenuPage.PageName" type="text"></td>
+            <th width="15%" style="background:#F5F5F6;">显示名称-链接</th>
+            <td width="35%"><input id="PageViewname" name="PageViewname" class="form-control objsort" value="@MenuPage.PageViewname" type="text"></td>
+        </tr>
+        <tr>
+            <th style="background:#F5F5F6;">显示名称-按钮</th>
+            <td colspan="3"><input id="PageBtnname" name="PageBtnname" class="form-control objsort" value="@MenuPage.PageBtnname" type="text"></td>
+
+        </tr>
+        <tr>
+            <th style="background:#F5F5F6;">页面类型</th>
+            <td>
+                <label><input name="PageType" class="PageType" type="radio" value="1" @(MenuPage.PageType == 1 ? "checked='checked'" : "") /> 页面</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label><input name="PageType" class="PageType" type="radio" value="2" @(MenuPage.PageType != 1 ? "checked='checked'" : "") /> Ajax</label>
+            </td>
+            <th style="background:#F5F5F6;">页面状态</th>
+            <td>
+                <label><input name="PageStatus" class="PageStatus" type="radio" value="1" @(MenuPage.PageStatus == 1 ? "checked='checked'" : "") /> 启用</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label><input name="PageStatus" class="PageStatus" type="radio" value="2" @(MenuPage.PageStatus != 1 ? "checked='checked'" : "") /> 禁用</label>
+            </td>
+        </tr>
+        <tr>
+            <th style="background:#F5F5F6;">URL地址</th>
+            <td colspan="3">
+                <input id="PageUrl" name="PageUrl" class="form-control objsort" value="@MenuPage.PageUrl" type="text">
+            </td>
+        </tr>
+    </table>
+</div>
+
